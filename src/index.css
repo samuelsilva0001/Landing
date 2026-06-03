@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tech Premium dark theme with WhatsApp green */
+    --background: 222 47% 6%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 40% 9%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 40% 9%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 142 70% 49%;          /* WhatsApp green #25D366 */
+    --primary-foreground: 222 47% 6%;
+    --primary-glow: 142 76% 60%;
+
+    --secondary: 222 32% 14%;
+    --secondary-foreground: 210 20% 92%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 142 70% 49%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 14%;
+    --ring: 142 70% 49%;
+
+    --radius: 1rem;
+
+    /* Chat bubble specific */
+    --chat-bg: 222 35% 8%;
+    --bubble-user: 142 60% 28%;
+    --bubble-bot: 222 28% 18%;
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse at top, hsl(142 70% 49% / 0.18), transparent 60%), linear-gradient(180deg, hsl(222 47% 6%), hsl(222 47% 4%));
+    --gradient-primary: linear-gradient(135deg, hsl(142 70% 49%), hsl(142 76% 60%));
+    --gradient-card: linear-gradient(160deg, hsl(222 40% 10%), hsl(222 40% 7%));
+    --gradient-text: linear-gradient(135deg, hsl(210 20% 98%), hsl(142 70% 70%));
+
+    /* Shadows / glows */
+    --shadow-glow: 0 0 60px hsl(142 70% 49% / 0.35);
+    --shadow-soft: 0 10px 40px -10px hsl(222 80% 2% / 0.6);
+    --shadow-elevated: 0 20px 60px -20px hsl(222 80% 2% / 0.8), 0 0 0 1px hsl(222 30% 16%);
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-smooth: all 0.4s var(--ease-out);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(222 30% 16% / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(222 30% 16% / 0.4) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
+
+@layer components {
+  .chat-bubble-bot {
+    @apply bg-[hsl(var(--bubble-bot))] text-foreground rounded-2xl rounded-tl-sm px-4 py-2.5 max-w-[85%];
+  }
+  .chat-bubble-user {
+    @apply bg-[hsl(var(--bubble-user))] text-foreground rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-[85%] ml-auto;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(142 70% 49% / 0.6); }
+  50% { box-shadow: 0 0 0 18px hsl(142 70% 49% / 0); }
+}
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-out infinite; }
+.animate-typing > span { animation: typing 1.2s ease-in-out infinite; display: inline-block; }
+.animate-typing > span:nth-child(2) { animation-delay: 0.15s; }
+.animate-typing > span:nth-child(3) { animation-delay: 0.3s; }
+.animate-bubble-in { animation: bubble-in 0.4s var(--ease-out) both; }
+.animate-fade-up { animation: fade-up 0.6s var(--ease-out) both; }

@@ -30,7 +30,7 @@ const Index = () => {
           <nav className="hidden md:flex items-center gap-8 text-base md:text-lg font-medium text-muted-foreground">
             <a href="#nichos" className="hover:text-foreground transition-colors">Nichos</a>
             <a href="#beneficios" className="hover:text-foreground transition-colors">Benefícios</a>
-            <a href="#depoimentos" className="hover:text-foreground transition-colors">Resultados</a>
+            <a href="#depoimentos" className="hover:text-foreground transition-colors">Como funciona</a>
             <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
           </nav>
           <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
@@ -205,30 +205,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* DEPOIMENTOS */}
+      {/* COMO FUNCIONA */}
       <section id="depoimentos" className="container py-20 lg:py-28">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-primary text-sm font-semibold mb-3 tracking-wider uppercase">Quem já usa</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Resultados </h2>
+          <p className="text-primary text-sm font-semibold mb-3 tracking-wider uppercase">Simples e rápido</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Como <span className="text-gradient-primary">funciona</span></h2>
+          <p className="text-muted-foreground text-lg">Do primeiro contato à IA rodando no seu WhatsApp em 3 passos.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { name: "Dra. Camila Reis", role: "Sorriso Odonto • SP", text: "Minha agenda lota 2 semanas antes. As faltas caíram de 30% pra menos de 10%. Foi o melhor investimento do consultório." },
-            { name: "Lucas Fernandes", role: "Prime Imóveis • RJ", text: "Antes a gente perdia lead à noite e fim de semana. Hoje a IA agenda visita até 3 da manhã. Triplicou o número de visitas marcadas." },
-            { name: "Dra. Helena Costa", role: "Costa & Advogados • MG", text: "A IA filtra o que não é meu cliente e agenda só os casos que valem a pena. Economizo horas por dia." },
+            { step: "1", title: "Conversa inicial", desc: "Você nos conta sobre seu negócio, seus serviços e como atende seus clientes hoje. Entendemos suas dores e objetivos." },
+            { step: "2", title: "Criamos sua IA personalizada", desc: "Treinamos a IA com seu tom de voz, preços, regras e integrações. Tudo sob medida para o seu negócio." },
+            { step: "3", title: "IA no ar, vendendo por você", desc: "Ativamos no seu WhatsApp. Sua IA começa a atender, qualificar leads e agendar clientes 24 horas por dia." },
           ].map((t) => (
-            <div key={t.name} className="card-elevated rounded-2xl p-7 border border-border">
-              <Quote className="h-8 w-8 text-primary mb-4" />
-              <p className="text-foreground/90 leading-relaxed mb-6">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="h-11 w-11 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center font-bold text-primary-foreground">
-                  {t.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
+            <div key={t.step} className="card-elevated rounded-2xl p-7 border border-border hover:border-primary/40 transition-all hover:-translate-y-1">
+              <div className="h-12 w-12 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-primary">{t.step}</span>
               </div>
+              <h3 className="text-xl font-semibold mb-2">{t.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t.desc}</p>
             </div>
           ))}
         </div>

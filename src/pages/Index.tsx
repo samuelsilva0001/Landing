@@ -65,14 +65,14 @@ const Index = () => {
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 px-7 text-base border-border">
                 <a href="#nichos">
-                  Ver resultados reais <ArrowRight className="h-5 w-5 ml-2" />
+                  Ver IA em ação <ArrowRight className="h-5 w-5 ml-2" />
                 </a>
               </Button>
             </div>
 
             <div className="mt-10 flex items-center gap-8 text-sm text-muted-foreground">
               <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Respostas instantâneas</div>
-              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> Diagnóstico gratuito</div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> Setup em até 7 dias</div>
               <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-primary" /> +3x mais vendas</div>
             </div>
           </div>
@@ -267,15 +267,15 @@ const Index = () => {
               Enquanto você lê isso, seus concorrentes já estão <span className="text-gradient-primary">atendendo com IA</span>.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-9 max-w-2xl mx-auto">
-              Cada minuto sem responder é um cliente que fecha com outro. Fale com nosso time e receba um diagnóstico gratuito do seu atendimento.
+              Cada minuto sem responder é um cliente que fecha com outro. Fale com nosso time e descubra como a IA pode transformar seu atendimento.
             </p>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-16 px-10 shadow-[0_15px_50px_-5px_hsl(var(--primary)/0.5)]">
-              <a href={buildWhatsAppLink("Olá RespondeAI! Quero receber o diagnóstico gratuito do meu atendimento.")} target="_blank" rel="noopener noreferrer">
+              <a href={buildWhatsAppLink("Olá RespondeAI! Quero saber como a IA pode aumentar minhas vendas no WhatsApp.")} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-6 w-6 mr-2" />
-                Receber diagnóstico gratuito
+                Quero vender mais agora
               </a>
             </Button>
-            <p className="text-xs text-muted-foreground mt-6">Resposta rápida • Diagnóstico gratuito • Sem compromisso</p>
+            <p className="text-xs text-muted-foreground mt-6">Resposta rápida • Sem compromisso</p>
           </div>
         </div>
       </section>

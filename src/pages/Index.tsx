@@ -58,22 +58,22 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-14 px-7 shadow-[0_10px_40px_-5px_hsl(var(--primary)/0.4)]">
-                <a href={buildWhatsAppLink("Olá Grupo RespondeAI! Quero uma demonstração da IA pro meu negócio.")} target="_blank" rel="noopener noreferrer">
+                <a href={buildWhatsAppLink("Olá RespondeAI! Quero parar de perder clientes e automatizar meu atendimento. Como funciona?")} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  Quero uma demonstração grátis
+                  Quero vender mais no WhatsApp
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 px-7 text-base border-border">
                 <a href="#nichos">
-                  Ver IA em ação <ArrowRight className="h-5 w-5 ml-2" />
+                  Ver resultados reais <ArrowRight className="h-5 w-5 ml-2" />
                 </a>
               </Button>
             </div>
 
             <div className="mt-10 flex items-center gap-8 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Resposta rápidas</div>
-              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> Setup agéis</div>
-              <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-primary" /> +3x leads</div>
+              <div className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Respostas instantâneas</div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> Diagnóstico gratuito</div>
+              <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-primary" /> +3x mais vendas</div>
             </div>
           </div>
 
@@ -157,12 +157,12 @@ const Index = () => {
             </ul>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
               <a
-                href={buildWhatsAppLink(`Olá RespondeAI! Quero a IA para ${current.label}.`)}
+                href={buildWhatsAppLink(`Olá RespondeAI! Tenho uma ${current.label.toLowerCase()} e quero automatizar meu atendimento. Podemos conversar?`)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="h-5 w-5 mr-2" />
-                Quero essa IA no meu negócio
+                Falar com especialista agora
               </a>
             </Button>
           </div>
@@ -264,18 +264,18 @@ const Index = () => {
           <div className="absolute -top-20 -right-20 h-64 w-64 bg-primary/30 blur-3xl rounded-full pointer-events-none" />
           <div className="relative">
             <h2 className="text-4xl md:text-6xl font-bold mb-5 leading-tight">
-              Pronto pra <span className="text-gradient-primary">parar de perder clientes</span>?
+              Enquanto você lê isso, seus concorrentes já estão <span className="text-gradient-primary">atendendo com IA</span>.
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-9 max-w-2xl mx-auto">
-              Fale comigo no WhatsApp agora. Te mostro como sua IA vai funcionar.
+              Cada minuto sem responder é um cliente que fecha com outro. Fale com nosso time e receba um diagnóstico gratuito do seu atendimento.
             </p>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-16 px-10 shadow-[0_15px_50px_-5px_hsl(var(--primary)/0.5)]">
-              <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer">
+              <a href={buildWhatsAppLink("Olá RespondeAI! Quero receber o diagnóstico gratuito do meu atendimento.")} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-6 w-6 mr-2" />
-                Falar com o grupo RespondeAI agora
+                Receber diagnóstico gratuito
               </a>
             </Button>
-            <p className="text-xs text-muted-foreground mt-6">Resposta em até 1 dia útil • Sem compromisso</p>
+            <p className="text-xs text-muted-foreground mt-6">Resposta rápida • Diagnóstico gratuito • Sem compromisso</p>
           </div>
         </div>
       </section>

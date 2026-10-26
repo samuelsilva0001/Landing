@@ -76,6 +76,27 @@ export const niches: Niche[] = [
     ],
   },
   {
+    id: "petshop",
+    label: "Pet Shops",
+    emoji: "🐾",
+    tagline: "Agende banho, tosa e consultas 24/7 e nunca perca um cliente peludo.",
+    contactName: "PetAmigo",
+    contactRole: "IA atendendo agora",
+    features: [
+      "Agendamento automático de banho, tosa e consultas",
+      "Lembretes de vacinas e retorno ao veterinário",
+      "Catálogo de produtos e promoções no automático",
+    ],
+    messages: [
+      { from: "user", text: "Oi, quero agendar banho e tosa pro meu golden", delay: 400 },
+      { from: "bot", text: "Olá! 🐾 Que fofo! Temos horário quinta às 9h ou sábado às 10h. Qual prefere?", delay: 500 },
+      { from: "user", text: "Sábado às 10h", delay: 600 },
+      { from: "bot", text: "Perfeito! ✅ Agendado: Banho e Tosa • Sábado 10h.\nQual o nome e peso do seu pet?", delay: 600 },
+      { from: "user", text: "Thor, 28kg", delay: 500 },
+      { from: "bot", text: "Anotado! Thor está na agenda 😊 Te mando o endereço e o valor. Até sábado!", delay: 500 },
+    ],
+  },
+  {
     id: "imobiliaria",
     label: "Imobiliárias",
     emoji: "🏢",

@@ -49,11 +49,12 @@ export const LeadCaptureModal = ({ isOpen, onClose, whatsappUrl }: Props) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    await sendLead();
+    // Abre o WhatsApp imediatamente (antes de qualquer await para não ser bloqueado pelo browser)
     window.open(buildEnrichedUrl(), "_blank");
     onClose();
     setName("");
     setPhone("");
+    sendLead(); // dispara em background, sem aguardar
     setSubmitting(false);
   };
 

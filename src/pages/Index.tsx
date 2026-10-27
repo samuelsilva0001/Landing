@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChatDemo } from "@/components/ChatDemo";
 import { FloatingWhatsApp, buildWhatsAppLink } from "@/components/WhatsAppButton";
+import { LeadCaptureModal } from "@/components/LeadCaptureModal";
 import { niches } from "@/data/niches";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -10,10 +11,18 @@ import logoRespondeAI from "@/assets/logo-respondeai.png";
 const Index = () => {
   const [active, setActive] = useState(niches[0].id);
   const current = niches.find((n) => n.id === active)!;
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalUrl, setModalUrl] = useState("");
+
+  const openLead = (url: string) => {
+    setModalUrl(url);
+    setModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen text-foreground">
       <FloatingWhatsApp />
+      <LeadCaptureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} whatsappUrl={modalUrl} />
 
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border">
@@ -57,11 +66,9 @@ const Index = () => {
               Implemento uma IA personalizada no seu WhatsApp que <strong className="text-foreground">responde clientes na hora</strong>, agenda, qualifica leads e nunca dorme.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-14 px-7 shadow-[0_10px_40px_-5px_hsl(var(--primary)/0.4)]">
-                <a href={buildWhatsAppLink("Olá RespondeAI! Quero parar de perder clientes e automatizar meu atendimento. Como funciona?")} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-5 w-5 mr-2" />
-                  Quero vender mais no WhatsApp
-                </a>
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-14 px-7 shadow-[0_10px_40px_-5px_hsl(var(--primary)/0.4)]" onClick={() => openLead(buildWhatsAppLink("Olá RespondeAI! Quero parar de perder clientes e automatizar meu atendimento. Como funciona?"))}>
+                <MessageCircle className="h-5 w-5 mr-2" />
+                Quero vender mais no WhatsApp
               </Button>
               <Button asChild size="lg" variant="outline" className="h-14 px-7 text-base border-border">
                 <a href="#nichos">
@@ -155,15 +162,9 @@ const Index = () => {
                 </li>
               ))}
             </ul>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <a
-                href={buildWhatsAppLink(`Olá RespondeAI! Tenho uma ${current.label.toLowerCase()} e quero automatizar meu atendimento. Podemos conversar?`)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="h-5 w-5 mr-2" />
-                Falar com especialista agora
-              </a>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => openLead(buildWhatsAppLink(`Olá RespondeAI! Tenho uma ${current.label.toLowerCase()} e quero automatizar meu atendimento. Podemos conversar?`))}>
+              <MessageCircle className="h-5 w-5 mr-2" />
+              Falar com especialista agora
             </Button>
           </div>
 
@@ -264,11 +265,9 @@ const Index = () => {
             <p className="text-lg md:text-xl text-muted-foreground mb-9 max-w-2xl mx-auto">
               Cada minuto sem responder é um cliente que fecha com outro. Fale com nosso time e descubra como a IA pode transformar seu atendimento.
             </p>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-16 px-10 shadow-[0_15px_50px_-5px_hsl(var(--primary)/0.5)]">
-              <a href={buildWhatsAppLink("Olá RespondeAI! Quero saber como a IA pode aumentar minhas vendas no WhatsApp.")} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-6 w-6 mr-2" />
-                Quero vender mais agora
-              </a>
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base h-16 px-10 shadow-[0_15px_50px_-5px_hsl(var(--primary)/0.5)]" onClick={() => openLead(buildWhatsAppLink("Olá RespondeAI! Quero saber como a IA pode aumentar minhas vendas no WhatsApp."))}>
+              <MessageCircle className="h-6 w-6 mr-2" />
+              Quero vender mais agora
             </Button>
             <p className="text-xs text-muted-foreground mt-6">Resposta rápida • Sem compromisso</p>
           </div>

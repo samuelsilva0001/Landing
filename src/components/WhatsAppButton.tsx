@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "5511999999999"; // Atualizar com número real
+const WHATSAPP_NUMBER = "5531987169819";
 const DEFAULT_MESSAGE = "Olá Samuel! Quero saber mais sobre a automação de atendimentos.";
 
 export const buildWhatsAppLink = (message = DEFAULT_MESSAGE) =>

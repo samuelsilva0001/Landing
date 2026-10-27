@@ -192,7 +192,7 @@ const Index = () => {
             { icon: TrendingUp, title: "Mais agendamentos", desc: "Conversão até 3x maior porque a IA conduz o lead até marcar o horário." },
             { icon: Bot, title: "Treinada para o seu negócio", desc: "Aprende seu tom de voz, seus serviços, seus preços e suas regras." },
             { icon: Shield, title: "Reduz custos com SDR", desc: "Substitui ou acelera sua equipe de pré-atendimento sem perder qualidade." },
-            { icon: Rocket, title: "Implantação em 30 dias", desc: "Da reunião à IA rodando no seu WhatsApp em até 30 dias. Sem complicação." },
+            { icon: Rocket, title: "Implantação em até 30 dias", desc: "Da reunião à IA rodando no seu WhatsApp em até 30 dias. Sem complicação." },
           ].map((b) => (
             <div key={b.title} className="card-elevated rounded-2xl p-6 border border-border hover:border-primary/40 transition-all hover:-translate-y-1">
               <div className="h-12 w-12 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-4">

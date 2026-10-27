@@ -4,7 +4,7 @@ import { X, MessageCircle, Loader2 } from "lucide-react";
 // Cole aqui a URL do seu webhook (n8n, Formspree, etc.)
 // Exemplo n8n: "https://seu-n8n.com/webhook/respondeai-leads"
 // Exemplo Formspree: "https://formspree.io/f/SEU_ID"
-const WEBHOOK_URL = "";
+const WEBHOOK_URL = "https://formspree.io/f/xdeegyko";
 
 interface Props {
   isOpen: boolean;

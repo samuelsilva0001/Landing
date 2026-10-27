@@ -21,7 +21,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen text-foreground">
-      <FloatingWhatsApp />
+      <FloatingWhatsApp onOpen={openLead} />
       <LeadCaptureModal isOpen={modalOpen} onClose={() => setModalOpen(false)} whatsappUrl={modalUrl} />
 
       {/* NAV */}
@@ -42,10 +42,8 @@ const Index = () => {
             <a href="#depoimentos" className="hover:text-foreground transition-colors">Como funciona</a>
             <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
           </nav>
-          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-4 w-4 mr-1.5" /> WhatsApp
-            </a>
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => openLead(buildWhatsAppLink())}>
+            <MessageCircle className="h-4 w-4 mr-1.5" /> WhatsApp
           </Button>
         </div>
       </header>
@@ -283,9 +281,9 @@ const Index = () => {
             </div>
             <span>© {new Date().getFullYear()} RespondeAI Automações. Todos os direitos reservados.</span>
           </div>
-          <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+          <button onClick={() => openLead(buildWhatsAppLink())} className="hover:text-primary transition-colors">
             Fale conosco no WhatsApp
-          </a>
+          </button>
         </div>
       </footer>
     </div>

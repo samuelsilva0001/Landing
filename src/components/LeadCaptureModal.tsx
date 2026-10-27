@@ -20,8 +20,8 @@ export const LeadCaptureModal = ({ isOpen, onClose, whatsappUrl }: Props) => {
   if (!isOpen) return null;
 
   const buildEnrichedUrl = () => {
+    const msg = "Olá RespondeAI! Quero saber mais sobre a IA de atendimento.";
     const base = whatsappUrl.split("?text=")[0];
-    const msg = `Olá RespondeAI! Meu nome é ${name || "visitante"} e meu WhatsApp é ${phone}. Quero saber mais sobre a IA de atendimento.`;
     return `${base}?text=${encodeURIComponent(msg)}`;
   };
 

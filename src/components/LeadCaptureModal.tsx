@@ -30,12 +30,15 @@ export const LeadCaptureModal = ({ isOpen, onClose, whatsappUrl }: Props) => {
     try {
       await fetch(WEBHOOK_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
         body: JSON.stringify({
-          nome: name,
+          nome: name || "Não informado",
           telefone: phone,
-          origem: "landing_page",
-          timestamp: new Date().toISOString(),
+          origem: "Landing Page - iarespondeai.com.br",
+          data: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
         }),
       });
     } catch {

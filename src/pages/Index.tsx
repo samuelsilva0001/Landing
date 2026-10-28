@@ -102,7 +102,7 @@ const Index = () => {
       <section className="border-y border-border bg-card/30">
         <div className="container py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { v: "+200", l: "Negócios atendidos" },
+            { v: "<2s", l: "Tempo de resposta" },
             { v: "98%", l: "Taxa de resposta" },
             { v: "24/7", l: "Sempre disponível" },
             { v: "70%", l: "Menos faltas" },
